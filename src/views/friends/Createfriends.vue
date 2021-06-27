@@ -56,7 +56,7 @@ export default {
       let no_tlp = friend.no_tlp;
       let alamat = friend.alamat;
 
-      axios.post("http://pia.labirin.co.id/api/friends/", {
+      axios.post("http://127.0.0.1:8000/api/friends", {
         nama: nama,
         no_tlp: no_tlp,
         alamat: alamat,

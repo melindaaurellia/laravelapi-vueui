@@ -68,7 +68,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get(`http://pia.labirin.co.id/api/friends/${route.params.id}`)
+        .get(` http://127.0.0.1:8000/api/friends/${route.params.id}`)
         .then((Response) => {
           console.log(Response.data.data.nama);
 
@@ -87,7 +87,7 @@ export default {
       let alamat = friend.alamat;
 
       axios
-        .put(`http://pia.labirin.co.id/api/friends/${route.params.id}`, {
+        .put(` http://127.0.0.1:8000/api/friends/${route.params.id}`, {
           nama: nama,
           no_tlp: no_tlp,
           alamat: alamat,
