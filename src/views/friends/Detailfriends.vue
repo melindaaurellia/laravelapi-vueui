@@ -1,19 +1,20 @@
 <template>
-  <div class="card text-center mt-4">
+  <div class="card text-center mt-4" v-for="f in friend" :key ="f.id">
   <div class="card-header">Detail Teman</div>
   <div class="card-body">
-    <h5 class="card-title">{{friend.nama}}</h5>
-    <p class="card-text">{{friend.no_tlp}}</p>
-    <p class="card-text">{{friend.alamat}}</p>
+    <h5 class="card-title">{{f.nama}}</h5>
+    <p class="card-text">{{f.no_tlp}}</p>
+    <p class="card-text">{{f.alamat}}</p>
+    <p class="card-text">{{f.groups.name}}</p>
   </div>
   <div class="card-footer">
    <router-link
               class="btn btn-success"
-              :to="{ name: 'Editfriends', params: { id: friend.id } }"
+              :to="{ name: 'Editfriends', params: { id: f.id } }"
               >Edit</router-link
             >
             <button
-              @click.prevent="friendDelete(friend.id)"
+              @click.prevent="friendDelete(f.id)"
               class="btn btn-danger"
             >
               Delete
